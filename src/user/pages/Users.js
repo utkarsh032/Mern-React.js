@@ -7,7 +7,7 @@ const User = () => {
       id: 'u1',
       name: 'MAX ROBIL',
       image:
-        'https://images.pexels.com/photos/17114615/pexels-photo-17114615/free-photo-of-wood-road-landscape-street.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+        'https://images.healthshots.com/healthshots/en/uploads/2020/12/08182549/positive-person.jpg',
       places: 3
     }
   ]
