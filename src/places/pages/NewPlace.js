@@ -1,5 +1,5 @@
 import React, { useCallback, useReducer } from 'react'
-import './NewPlace.css'
+import './PlaceForm.css'
 
 import Input from '../../shared/components/FormElements/Input'
 import {
@@ -34,6 +34,8 @@ const formReducer = (state, action) => {
 }
 
 const NewPlace = () => {
+  const descriptionInputHandler = useCallback((id, value, isValid) => {}, [])
+
   const [formState, dispatch] = useReducer(formReducer, {
     inputs: {
       title: {
@@ -57,10 +59,13 @@ const NewPlace = () => {
     })
   }, [])
 
-  const descriptionInputHandler = useCallback((id, value, isValid) => {}, [])
+  const placeSubmitHandler = event => {
+    event.preventDefault()
+    console.log(formState.inputs)
+  }
 
   return (
-    <form className='place-form'>
+    <form className='place-form' onSubmit={placeSubmitHandler}>
       <Input
         id='title'
         element='input'
@@ -79,6 +84,16 @@ const NewPlace = () => {
         errorText='Please enter a valid description (at least 5 character).'
         onInput={inputHandler}
       />
+
+      <Input
+        id='address'
+        element='input'
+        label='Address'
+        validators={[VALIDATOR_REQUIRE()]}
+        errorText='Please enter a valid Address '
+        onInput={inputHandler}
+      />
+
       <Button type='submit' disabled={!formState.isValid}>
         ADD PLACE
       </Button>

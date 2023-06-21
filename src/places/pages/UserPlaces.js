@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom'
 
 import PlaceList from '../components/PlaceList'
 
+import './PlaceForm.css'
+
 const DUMMY_PLACES = [
   {
     id: 'p1',
