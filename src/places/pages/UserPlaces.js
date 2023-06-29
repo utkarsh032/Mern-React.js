@@ -32,7 +32,6 @@ const DUMMY_PLACES = [
     },
     creator: 'u2'
   },
-
   {
     id: 'p3',
     title: 'Empire State Building',
